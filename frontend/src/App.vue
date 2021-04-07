@@ -14,7 +14,13 @@
               <div class="buttons">
                 <router-link to="/dashboard/my-account" class="button is-light">My account</router-link>
               </div>
-            </div>      
+            </div>
+            <div class="navbar-item">
+              <div class="buttons">
+                <Logout></Logout>
+              </div>
+            </div>     
+
           </template>
 
           <template v-else>
@@ -43,9 +49,13 @@
 
 <script>
   import axios from 'axios'
+  import Logout from '../src/components/buttons/Logout'
 
   export default {
     name: 'App',
+    components: {
+      Logout
+    },
     beforeCreate() {
       this.$store.commit('initializeStore')
 
