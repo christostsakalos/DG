@@ -10,6 +10,21 @@
           <template v-if="$store.state.isAuthenticated">
             <router-link to="/dashboard" class="navbar-item">Dashboard</router-link>
 
+                  <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            <router-link to="/customers" class="navbar-item">Customers</router-link>
+          </a>
+          <a class="navbar-item">
+            Item 2
+          </a>
+        </div>
+      </div>
+
             <div class="navbar-item">
               <div class="buttons">
                 <router-link to="/dashboard/my-account" class="button is-light">My account</router-link>
