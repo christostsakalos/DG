@@ -53,7 +53,7 @@
                         <td class="table is-narrow">{{ customer.country }}</td>
                         <td class="table is-narrow"><router-link :to="{ name: 'Customer', params: { id: customer.id }}" class="button is-info">View</router-link>
                         <router-link :to="{ name: 'CustomerEdit', params: { id: customer.id }}" class="button is-link">Edit</router-link>
-                        <router-link :to="{ name: 'CustomerDelete', params: { id: customer.id }}"  class="button is-danger">Delete</router-link></td>
+                        <button class="button is-danger" @click="Deletecustomer(customer.id)">Delete</button></td>
                     </tr>
                  <Paginator :last-page="lastPage" @page-changed="load($event)"/>   </tbody>
                     <tbody v-else-if="search_term.length >= 3">
@@ -67,7 +67,7 @@
                         <td class="table is-narrow">{{ customer.country }}</td>
                         <td class="table is-narrow"><router-link :to="{ name: 'Customer', params: { id: customer.id }}" class="button is-info">View</router-link>
                         <router-link :to="{ name: 'CustomerEdit', params: { id: customer.id }}" class="button is-link">Edit</router-link>
-                        <router-link :to="{ name: 'CustomerDelete', params: { id: customer.id }}"  class="button is-danger">Delete</router-link></td>
+                        <button class="button is-danger" @click="Deletecustomer(customer.id)">Delete</button></td>
                     </tr>
                <PaginatorSearch :last-page="lastPagesearch" @page-changedsearch="getCustomer($event)" />
                </tbody>
@@ -81,7 +81,8 @@
 </template>
 
 <script>
-import {ref, onMounted} from 'vue';
+import {ref, onMounted, useRouter} from 'vue';
+import { toast } from 'bulma-toast';
 import axios from 'axios'
 import Paginator from '@/components/paginators/Paginator'
 import PaginatorSearch from '@/components/paginators/PaginatorSearch'
@@ -89,6 +90,8 @@ export default {
     name: 'Customers',
     components: {Paginator, PaginatorSearch},
   setup() {
+
+
 
     const customers = ref([]);
     const searched_customers = ref([]);
@@ -107,6 +110,22 @@ export default {
       lastPagesearch.value = responsesearch.data.meta.last_page;}
 
     onMounted(load);
+
+    async function Deletecustomer (id = customer.id) {
+      if (confirm('Are you sure you want to delete this record?')) {
+           await axios.delete(`/api/v1/customers/${id}`);
+            customers.value = customers.value.filter((customers)=> customers.id !== id)
+            toast({
+                        message: 'The customer has been removed',
+                        type: 'is-danger',
+                        dismissible: true,
+                        pauseOnHover: true,
+                        duration: 3000,
+                        position: 'bottom-right',
+                    })    
+                     }
+               
+                  }
        
     return {
       customers,
@@ -117,18 +136,21 @@ export default {
       getCustomer,
       search_term,
       searched_customers,
-      pagesearch
+      pagesearch,
+      Deletecustomer,
+
     
       
     }
   }
 }
 /* To do 1 : Add search functionality --- Done
-To do 2 : Rework the delete function
+To do 2 : Rework the delete function --- Done
 To do 3 : Add the dbvehicle relationship
 To do 4: Swap to mysql
 To do 5: Improve pagination
-To do 6: Improve the ui */
+To do 6: Improve the ui 
+To do 7: fix the validators */
 </script>
 
 <style lang="scss" scoped>

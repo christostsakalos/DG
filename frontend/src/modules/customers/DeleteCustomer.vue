@@ -9,17 +9,14 @@ import { toast } from 'bulma-toast'
 
 export default {
     name: 'CustomerDelete',
-    data () {
-        return {
-            customer: {}
-        }
-    },
+
     mounted() {
         this.deleteCustomer()
     },
     methods: {
         deleteCustomer() {
             const customerID = this.$route.params.id
+            if (confirm('Are you sure you want to delete this customer?')){
             axios
                 .delete(`/api/v1/customers/${customerID}`)
                 .then(response => {
@@ -36,7 +33,7 @@ export default {
                 })
                 .catch(error => {
                     console.log(JSON.stringify(error))
-                })
+                })}
         }
     }
 }
