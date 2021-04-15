@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 
 from .serializers import CustomerSerializer
 from .models import Customer
@@ -12,6 +12,9 @@ class CustomerViewSet(viewsets.ModelViewSet):
     serializer_class = CustomerSerializer
     queryset = Customer.objects.all()
     pagination_class = CustomPagination
-    paginate_by = 10
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('first_name', 'last_name','email')
+
+    
 
     

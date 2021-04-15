@@ -31,7 +31,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:8000",
     "http://127.0.0.1:8080",
-    "http://172.21.4.34:8080",
+    "http://172.30.103.182:8080"
 ]
 
 """ REST_FRAMEWORK = {
@@ -41,8 +41,8 @@ CORS_ALLOWED_ORIGINS = [
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     )
-}
- """
+} """
+
 
 
 
