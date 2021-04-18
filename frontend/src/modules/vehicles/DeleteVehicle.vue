@@ -8,27 +8,27 @@ import { toast } from 'bulma-toast'
 
 
 export default {
-    name: 'CustomerDelete',
+    name: 'VehicleDelete',
 
     mounted() {
-        this.deleteCustomer()
+        this.deleteVehicle()
     },
     methods: {
-        deleteCustomer() {
-            const customerID = this.$route.params.id
-            if (confirm('Are you sure you want to delete this customer?')){
+        deleteVehicle() {
+            const vehicleID = this.$route.params.id
+            if (confirm('Are you sure you want to delete this vehicle?')){
             axios
-                .delete(`/api/v1/customers/${customerID}`)
+                .delete(`/api/v1/vehicles/${vehicleID}`)
                 .then(response => {
                     toast({
-                        message: 'The customer has been removed',
+                        message: 'The vehicle has been removed',
                         type: 'is-danger',
                         dismissible: true,
                         pauseOnHover: true,
                         duration: 3000,
                         position: 'bottom-right',
                     })                 
-                    this.$router.push('/customers')
+                    this.$router.push('/vehicles')
                 
                 })
                 .catch(error => {

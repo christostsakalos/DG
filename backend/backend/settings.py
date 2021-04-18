@@ -55,12 +55,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Helpers
+    'mptt', # For categories
 
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
-    'djoser',
-    'addins.customers'
+    'djoser', # For Auth
+
+    #Mine
+    'addins.customers',
+    'addins.vehicles',
+    'addins.inventory',
 
 ]
 

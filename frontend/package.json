@@ -16,6 +16,7 @@
     "vue-dataset": "^1.1.1",
     "vue-router": "^4.0.0-0",
     "vue-simple-alert": "^1.1.1",
+    "vue3-autocomplete": "^1.0.1",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {

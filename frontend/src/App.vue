@@ -20,7 +20,7 @@
             <router-link to="/customers" class="navbar-item">Customers</router-link>
           </a>
           <a class="navbar-item">
-            Item 2
+           <router-link to="/vehicles" class="navbar-item">Vehicles</router-link>
           </a>
         </div>
       </div>

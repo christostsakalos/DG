@@ -17,6 +17,13 @@ const routes = [
   {path: '/customers/:id', name: 'Customer', component: () => import ('../modules/customers/Customer.vue'), meta: {requireLogin:true}},
   {path: '/customers/:id/edit', name: 'CustomerEdit', component: () => import ('../modules/customers/EditCustomer.vue'), meta: {requireLogin:true}},
   {path: '/customers/:id/delete', name: 'CustomerDelete', component: () => import ('../modules/customers/DeleteCustomer.vue'), meta: {requireLogin:true}},
+  
+  // Vehicle routes
+  {path: '/vehicles', name: 'Vehicles', component: () => import ('../modules/vehicles/Vehicles.vue'), meta: {requireLogin:true}},
+  {path: '/vehicles/add', name: 'AddVehicle', component: () => import ('../modules/vehicles/AddVehicle.vue'), meta: {requireLogin:true}},
+  {path: '/vehicles/:id', name: 'Vehicle', component: () => import ('../modules/vehicles/Vehicle.vue'), meta: {requireLogin:true}},
+  {path: '/vehicles/:id/edit', name: 'VehicleEdit', component: () => import ('../modules/vehicles/EditVehicle.vue'), meta: {requireLogin:true}},
+  {path: '/vehicles/:id/delete', name: 'VehicleDelete', component: () => import ('../modules/vehicles/DeleteVehicle.vue'), meta: {requireLogin:true}},
 ]
 
 const router = createRouter({

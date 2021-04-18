@@ -43,7 +43,7 @@
                     
                     <tbody v-if="search_term.length <= 3" @keyup="load">
                    
-                    <tr v-for="customer in customers" v-bind:key="customer.id">
+                    <tr v-for="customer in customers" v-bind:key="customer.id" >
                         <td class="table is-narrow">{{ customer.reference_number }}</td>
                         <td class="table is-narrow">{{ customer.first_name }}</td>
                         <td class="table is-narrow">{{ customer.last_name }}</td>
@@ -146,7 +146,7 @@ export default {
 }
 /* To do 1 : Add search functionality --- Done
 To do 2 : Rework the delete function --- Done
-To do 3 : Add the dbvehicle relationship
+To do 3 : Add the dbvehicle relationship --- Done
 To do 4: Swap to mysql
 To do 5: Improve pagination
 To do 6: Improve the ui 
