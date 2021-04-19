@@ -59,7 +59,7 @@
                         <td class="table is-narrow">{{ vehicle.fueltype }}</td>
                         <td class="table is-narrow">{{ vehicle.colour }}</td>
                         <td class="table is-narrow">{{ vehicle.first_name }} {{vehicle.last_name}}</td>
-                        <td class="table is-narrow"><router-link :to="{ name: 'vehicle', params: { id: vehicle.id }}" class="button is-info">View</router-link>
+                        <td class="table is-narrow"><router-link :to="{ name: 'Vehicle', params: { id: vehicle.id }}" class="button is-info">View</router-link>
                         <router-link :to="{ name: 'VehicleEdit', params: { id: vehicle.id }}" class="button is-link">Edit</router-link>
                         <button class="button is-danger" @click="Deletevehicle(vehicle.id)">Delete</button></td>
                     </tr>

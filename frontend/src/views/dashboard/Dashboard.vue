@@ -5,11 +5,17 @@
                 <li><router-link to="/dashboard">Dashboard</router-link></li>
             </ul>
         </nav>
-        <div class="columns is-multiline">
-            <div class="column is-12">
-                <h1 class="title">Dashboard</h1>
-            </div>
-        </div>
+
+<div style="display: flex;">
+        Test
+    <div style="flex: 0.1;height: 200px; background-color: #f4f5f8">
+
+    </div>
+
+    <div class="divider is-vertical">And</div>
+    <div style="flex: 1;height: 200px; background-color: #f4f5f8"></div>
+    Test2
+</div>
     </div>
 </template>
 
