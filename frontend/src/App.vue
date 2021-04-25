@@ -12,7 +12,24 @@
 
                   <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          More
+         Administration
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            <router-link to="/categories" class="navbar-item">Categories</router-link>
+          </a>
+          <a class="navbar-item">
+           <router-link to="/vehicles" class="navbar-item">#</router-link>
+          </a>
+        </div>
+      </div>
+
+
+
+                  <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          General
         </a>
 
         <div class="navbar-dropdown">
@@ -21,6 +38,9 @@
           </a>
           <a class="navbar-item">
            <router-link to="/vehicles" class="navbar-item">Vehicles</router-link>
+          </a>
+          <a class="navbar-item">
+           <router-link to="/parts" class="navbar-item">Inventory</router-link>
           </a>
         </div>
       </div>
@@ -51,13 +71,12 @@
         </div>
       </div>
     </nav>
-
     <section class="section">
       <router-view/>
     </section>
 
     <footer class="footer">
-      <p class="has-text-centered">Copyright Tsakal (c) 2021</p>
+      <p class="content has-text-centered">Copyright Tsakal (c) 2021</p>
     </footer>
   </div>
 </template>
@@ -87,4 +106,5 @@
 
 <style lang="scss">
 @import '../node_modules/bulma';
+
 </style>

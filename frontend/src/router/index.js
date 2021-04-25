@@ -24,6 +24,24 @@ const routes = [
   {path: '/vehicles/:id', name: 'Vehicle', component: () => import ('../modules/vehicles/Vehicle.vue'), meta: {requireLogin:true}},
   {path: '/vehicles/:id/edit', name: 'VehicleEdit', component: () => import ('../modules/vehicles/EditVehicle.vue'), meta: {requireLogin:true}},
   {path: '/vehicles/:id/delete', name: 'VehicleDelete', component: () => import ('../modules/vehicles/DeleteVehicle.vue'), meta: {requireLogin:true}},
+
+  // Inventory - Categories
+  {path: '/categories', name: 'Categories', component: () => import ('../modules/inventory/categories/Categories.vue'), meta: {requireLogin:true}},
+  {path: '/categories/add', name: 'AddCategory', component: () => import ('../modules/inventory/categories/components/AddCategory.vue'), meta: {requireLogin:true}},
+  {path: '/categories/:id', name: 'Category', component: () => import ('../modules/inventory/categories/components/Category.vue'), meta: {requireLogin:true}},
+  {path: '/categories/:id/edit', name: 'CategoryEdit', component: () => import ('../modules/inventory/categories/components/EditCategory.vue'), meta: {requireLogin:true}},
+  {path: '/categories/:id/delete', name: 'CategoryDelete', component: () => import ('../modules/inventory/categories/components/DeleteCategory.vue'), meta: {requireLogin:true}},
+  {path: '/subcategories/add', name: 'AddSubcategory', component: () => import ('../modules/inventory/categories/components/AddSubcategory.vue'), meta: {requireLogin:true}},
+  {path: '/subcategories/:id', name: 'Subcategory', component: () => import ('../modules/inventory/categories/components/Subcategory.vue'), meta: {requireLogin:true}},
+  {path: '/subcategories/:id/edit', name: 'SubcategoryEdit', component: () => import ('../modules/inventory/categories/components/EditSubcategory.vue'), meta: {requireLogin:true}},
+  {path: '/subcategories/:id/delete', name: 'SubcategoryDelete', component: () => import ('../modules/inventory/categories/components/DeleteSubcategory.vue'), meta: {requireLogin:true}},
+  // Inventory - Categories
+  {path: '/parts', name: 'Parts', component: () => import ('../modules/inventory/inventoryparts/Parts.vue'), meta: {requireLogin:true}},
+  {path: '/parts/add', name: 'AddPart', component: () => import ('../modules/inventory/inventoryparts/AddPart.vue'), meta: {requireLogin:true}},
+  {path: '/parts/:id', name: 'Part', component: () => import ('../modules/inventory/inventoryparts/Part.vue'), meta: {requireLogin:true}},
+  {path: '/parts/:id/edit', name: 'PartEdit', component: () => import ('../modules/inventory/inventoryparts/EditPart.vue'), meta: {requireLogin:true}},
+  {path: '/parts/:id/delete', name: 'PartDelete', component: () => import ('../modules/inventory/inventoryparts/DeletePart.vue'), meta: {requireLogin:true}},
+
 ]
 
 const router = createRouter({

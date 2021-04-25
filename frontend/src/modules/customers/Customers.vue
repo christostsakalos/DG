@@ -55,7 +55,7 @@
                         <router-link :to="{ name: 'CustomerEdit', params: { id: customer.id }}" class="button is-link">Edit</router-link>
                         <button class="button is-danger" @click="Deletecustomer(customer.id)">Delete</button></td>
                     </tr>
-                 <Paginator :last-page="lastPage" @page-changed="load($event)"/>   </tbody>
+                 <Paginator :last-page="lastPage"  @page-changed="load($event)"/>   </tbody>
                     <tbody v-else-if="search_term.length >= 3">
                                           <tr v-for="customer in searched_customers" v-bind:key="customer.id">
                         <td class="table is-narrow">{{ customer.reference_number }}</td>
