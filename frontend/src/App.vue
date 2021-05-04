@@ -2,13 +2,14 @@
   <div id="wrapper">
     <nav class="navbar is-dark">
       <div class="navbar-brand">
-        <router-link to="/" class="navbar-item"><strong>G Manager</strong></router-link>
+        <router-link to="/log-in" class="navbar-item"><strong>G Manager</strong></router-link>
       </div>
 
       <div class="navbar-menu">
         <div class="navbar-end">
           <template v-if="$store.state.isAuthenticated">
             <router-link to="/dashboard" class="navbar-item">Dashboard</router-link>
+            <router-link to="/jobsheets" class="navbar-item">Jobsheets</router-link>
 
                   <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
@@ -74,11 +75,10 @@
           </template>
 
           <template v-else>
-            <router-link to="/" class="navbar-item">Home</router-link>
 
             <div class="navbar-item">
               <div class="buttons">
-                <router-link to="/sign-up" class="button is-success"><strong>Sign up</strong></router-link>
+               <!--  <router-link to="/sign-up" class="button is-success"><strong>Sign up</strong></router-link> -->
                 <router-link to="/log-in" class="button is-light">Log in</router-link>
               </div>
             </div> 

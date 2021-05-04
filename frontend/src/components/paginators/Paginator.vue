@@ -17,7 +17,7 @@ export default {
   name: "Paginator",
   emits: ['page-changed'],
   props: {
-    lastPage: Number
+    lastPage: Number,
   },
   setup(props, {emit}) {
     const page = ref(1);

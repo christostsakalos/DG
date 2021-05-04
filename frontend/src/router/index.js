@@ -4,11 +4,11 @@ import store from '../store'
 
 const routes = [
   // Vue routes
-  {path: '/',name: 'Home',component: () => import('../views/Home.vue')},
-  {path: '/about',name: 'About',component: () => import('../views/About.vue')},
+   {path: '/',name: 'LogIn', component: () => import('../views/LogIn.vue')},
+  /*{path: '/about',name: 'About',component: () => import('../views/About.vue')}, */
    // Sign-in routes
-  {path: '/sign-up', name: 'SignUp',component: () => import ('../views/LogIn.vue')},
   {path: '/log-in',name: 'LogIn', component: () => import('../views/LogIn.vue')},
+  //{path: '/sign-up', name: 'SignUp',component: () => import ('../views/LogIn.vue')},
   {path: '/dashboard', name: 'Dashboard',component: () => import('../views/dashboard/Dashboard.vue'),meta: { requireLogin: true} },
   {path: '/dashboard/my-account',name: 'MyAccount', component: () => import('../views/dashboard/MyAccount.vue'), meta: { requireLogin: true}},
   // Customer routes
@@ -47,6 +47,13 @@ const routes = [
   {path: '/invoices/:id', name: 'Invoice', component: () => import ('../modules/invoices/Invoice.vue'), meta: {requireLogin:true}},
   //To delete invoice if any mistakes occur
   {path: '/invoicesdelete', name: 'Invoicesdelete', component: () => import ('../modules/invoices/InvoicesDel.vue'), meta: {requireLogin:true}},
+  // Jobsheets routes
+  {path: '/jobsheets', name: 'Jobsheets', component: () => import ('../modules/jobsheets/Jobsheets.vue'), meta: {requireLogin:true}},
+  {path: '/jobsheets/add', name: 'AddJobsheet', component: () => import ('../modules/jobsheets/AddJobsheet.vue'), meta: {requireLogin:true}},
+  {path: '/jobsheets/:id', name: 'Jobsheet', component: () => import ('../modules/jobsheets/Jobsheet.vue'), meta: {requireLogin:true}},
+  {path: '/jobsheets/:id/edit', name: 'JobsheetEdit', component: () => import ('../modules/jobsheets/EditJobsheet.vue'), meta: {requireLogin:true}},
+  {path: '/jobsheets/:id/delete', name: 'JobsheetDelete', component: () => import ('../modules/jobsheets/DeleteJobsheet.vue'), meta: {requireLogin:true}},
+
 ]
 
 const router = createRouter({

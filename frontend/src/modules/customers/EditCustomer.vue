@@ -1,5 +1,5 @@
 <template>
-    <div class="page-add-customer">
+    <div class="page-edit-customer">
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
                 <li><router-link to="/dashboard">Dashboard</router-link></li>
