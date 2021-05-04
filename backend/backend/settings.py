@@ -22,6 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-ov*gvvrt91nb4wfp85wzc&!wtqq2_#br7vaf_j)=3s7e7i$7mt'
 
+#Emails
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -31,7 +34,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:8000",
     "http://127.0.0.1:8080",
-    "http://172.30.103.182:8080"
+    "http://172.30.103.182:8080",
+    "http://172.20.89.202:8080",
 ]
 
 """ REST_FRAMEWORK = {
@@ -67,6 +71,7 @@ INSTALLED_APPS = [
     'addins.customers',
     'addins.vehicles',
     'addins.inventory',
+    'addins.invoices',
 
 ]
 

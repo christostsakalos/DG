@@ -41,7 +41,12 @@ const routes = [
   {path: '/parts/:id', name: 'Part', component: () => import ('../modules/inventory/inventoryparts/Part.vue'), meta: {requireLogin:true}},
   {path: '/parts/:id/edit', name: 'PartEdit', component: () => import ('../modules/inventory/inventoryparts/EditPart.vue'), meta: {requireLogin:true}},
   {path: '/parts/:id/delete', name: 'PartDelete', component: () => import ('../modules/inventory/inventoryparts/DeletePart.vue'), meta: {requireLogin:true}},
-
+  // Invoice
+  {path: '/invoices/add', name: 'AddInvoice', component: () => import ('../modules/invoices/AddInvoice.vue'), meta: {requireLogin:true}},
+  {path: '/invoices', name: 'Invoices', component: () => import ('../modules/invoices/Invoices.vue'), meta: {requireLogin:true}},
+  {path: '/invoices/:id', name: 'Invoice', component: () => import ('../modules/invoices/Invoice.vue'), meta: {requireLogin:true}},
+  //To delete invoice if any mistakes occur
+  {path: '/invoicesdelete', name: 'Invoicesdelete', component: () => import ('../modules/invoices/InvoicesDel.vue'), meta: {requireLogin:true}},
 ]
 
 const router = createRouter({

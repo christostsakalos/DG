@@ -7,7 +7,7 @@
                 <li><router-link :to="{ name: 'Customer', params: { id: customer.id }}">{{ customer.first_name }} {{  customer.last_name}}</router-link></li>
             </ul>
         </nav>
-        <div class="columns is-centered">
+        <div class="columns is-multiline">
             <div class="column is-4">
                 <h1 class="title">{{ customer.first_name }} {{ customer.last_name }}</h1>
 
@@ -26,8 +26,10 @@
                 <p v-if="customer.postcode || customer.country">{{ customer.postcode }} {{ customer.country }}</p>
             </div>
 
-        </div>
-        <div class="columns is-centered">
+       
+</div>
+<div class="columns is-multiline">
+        <div class="column is-6">
    
            
                             <div class="table-container"> <h2 class="subtitle">Owned vehicles: </h2>
@@ -54,11 +56,38 @@
                     </tr>
                </tbody>
                 </table>
+                
  
             </div>
             </div>
-      
+<div class="column is-6">
+                            <div class="table-container"> <h2 class="subtitle">Invoices: </h2>
+                <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                    <thead>
+                    <tr class="th">
+                        <th>Invoice Number</th>
+                        <th>Amount</th>
+                        <th>Due days</th>
+                        <th>Is paid</th>
+                        <th>Action</th>
+                    </tr></thead>
 
+                    <tbody>
+                    <tr  v-for="invoice in invoices" v-bind:key="invoice.id">
+                        <td class="table is-narrow">{{ invoice.id }}</td>
+                        <td class="table is-narrow">{{ invoice.gross_amount }}</td>
+                        <td class="table is-narrow">{{ invoice.get_due_date_formatted }}</td>
+                        <td class="table is-narrow">{{getStatusLabel(invoice)}}</td>
+                        <td class="table is-narrow"><router-link :to="{ name: 'Invoice', params: { id: invoice.id }}">Details</router-link></td>
+                    </tr>
+               </tbody>
+                </table>
+                
+ 
+            </div>
+</div>
+            
+</div>
 
     </div>
 </template>
@@ -71,7 +100,8 @@ export default {
     data () {
         return {
             customer: {},
-            owned_vehicles: []
+            owned_vehicles: [],
+            invoices: []
         }
     },
     mounted() {
@@ -88,11 +118,19 @@ export default {
                     this.customer = response.data
                     for (let i = 0; i < response.data.owned_vehicles.length; i++) {
                         this.owned_vehicles.push(response.data.owned_vehicles[i])}
-                    console.log(this.owned_vehicles)
+                    for (let j = 0; j < response.data.invoices.length; j++){
+                        this.invoices.push(response.data.invoices[j])}
                 })
                 .catch(error => {
                     console.log(JSON.stringify(error))
                 })
+        },
+                getStatusLabel(invoice) {
+            if (invoice.is_paid) {
+                return 'Yes'
+            } else {
+                return 'No'
+            }
         }
     }
 }

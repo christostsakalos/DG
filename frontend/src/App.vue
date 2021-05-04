@@ -12,6 +12,21 @@
 
                   <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
+          Finace
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            <router-link to="/invoices" class="navbar-item">Invoices</router-link>
+          </a>
+          <a class="navbar-item">
+           <router-link to="/invoices/add" class="navbar-item">Add Invoice</router-link>
+          </a>
+        </div>
+      </div>
+
+                  <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
          Administration
         </a>
 
@@ -20,7 +35,7 @@
             <router-link to="/categories" class="navbar-item">Categories</router-link>
           </a>
           <a class="navbar-item">
-           <router-link to="/vehicles" class="navbar-item">#</router-link>
+           <router-link to="/invoicesdelete" class="navbar-item">Invoices</router-link>
           </a>
         </div>
       </div>

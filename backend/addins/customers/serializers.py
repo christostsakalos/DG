@@ -2,11 +2,13 @@ from rest_framework import serializers
 
 from .models import Customer
 from addins.vehicles.serializers import VehicleSerializer
+from addins.invoices.serializers import InvoiceSerializer
 
 # Thanks to drf documendation https://www.django-rest-framework.org/api-guide/relations/
 
 class CustomerSerializer(serializers.ModelSerializer):
     owned_vehicles =  VehicleSerializer(many=True, read_only=True) 
+    invoices = InvoiceSerializer(many=True, read_only=True)
     """ I'm setting read_only=True to update Customer without
     updating  owned_vehicles """
     class Meta:
@@ -27,5 +29,6 @@ class CustomerSerializer(serializers.ModelSerializer):
             "postcode",
             "country",
             "owned_vehicles",
+            "invoices"
 
         )

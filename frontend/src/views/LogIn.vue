@@ -46,7 +46,15 @@ export default {
             errors: []
         }
     },
+    mounted(){
+        this.Redirect()
+    },
     methods: {
+
+        Redirect(){
+            if (this.$store.state.isAuthenticated)
+            this.$router.push('/dashboard')
+        },
         submitForm(e) {
             axios.defaults.headers.common["Authorization"] = ""
 

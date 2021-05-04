@@ -26,7 +26,7 @@
             </div>
 
             <div
-                class="column is-8">
+                class="column is-10">
               <div class="table-container">
                 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
                     <thead>
