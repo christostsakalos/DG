@@ -1,5 +1,5 @@
 <template>
-    <button @click="logout()" class="button is-danger">Log out</button>
+    <button @click="logout()" class="button is-danger">{{ $t("Log out") }}</button>
 </template>
 
 

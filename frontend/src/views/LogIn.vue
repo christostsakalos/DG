@@ -1,5 +1,6 @@
 <template>
     <div class="page-login">
+
         <div class="columns">
             <div class="column is-4 is-offset-4">
                 <h1 class="title">Log in</h1>
@@ -35,7 +36,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
 
 export default {
     name: 'LogIn',

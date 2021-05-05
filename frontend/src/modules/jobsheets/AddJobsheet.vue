@@ -2,17 +2,17 @@
     <div class="page-add-jobsheet">
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Add jobsheet</h1>
+                <h1 class="title">{{ $t("Add jobsheet") }}</h1>
             </div>
             <div class="column is-6">
                 <div class="field">
-                    <label>Ref Number</label>
+                    <label>{{ $t("Reference Number") }}</label>
                     
                     <div class="control">
                         <input type="number" name="reference_number" class="input" v-model="reference_number">
                     </div>
                 </div>
-Select Customer<br>
+{{ $t("Select customer") }}<br>
 
 <div class="select is-link">
     
@@ -21,7 +21,7 @@ Select Customer<br>
     <option v-for="customer in customerget"  v-bind:key="customer.id" :value="customer.id">{{customer.first_name}} {{ customer.last_name}}</option>
   </select>
 </div><br>
-Select Vehicle<br>
+{{ $t("Select vehicle") }}<br>
 
 <div class="select is-link">
     
@@ -33,7 +33,7 @@ Select Vehicle<br>
 
 
                 <div class="field">
-                    <label>Note</label>
+                    <label>{{ $t("Note") }}</label>
                     
                     <div class="control">
                         <input type="text" name="notes" class="input" v-model="notes">
@@ -41,7 +41,7 @@ Select Vehicle<br>
                 </div>
 
                 <div class="field">
-                    <label>Date Due</label>
+                    <label>{{ $t("Date Due") }}</label>
                     
                     <div class="control">
                       <input type="date" name="datedue" v-model="datedue">
@@ -50,14 +50,14 @@ Select Vehicle<br>
 
                 <div class="select">
                 <select v-model="status">
-                    <option>Status</option>
+                    <option value="">{{ $t("Status") }}</option>
                     <option>Pending</option>
                     <option>C</option>
                 </select>
                 </div>
 
                 <div class="field">
-                    <label>Remaining</label>
+                    <label>{{ $t("Remaining") }}</label>
                     
                     <div class="control">
                         <input type="number" name="remaining" class="input" v-model="remaining">

@@ -2,12 +2,12 @@
     <div class="page-add-customer">
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Add customer</h1>
+                <h1 class="title">{{ $t("Add customer") }}</h1>
             </div>
 
             <div class="column is-6">
                 <div class="field">
-                    <label>Reference number</label>
+                    <label>{{ $t("Reference Number") }}</label>
                     
                     <div class="control">
                         <input type="number" name="reference_number" class="input" v-model="customer.reference_number">
@@ -16,7 +16,7 @@
 
 
                 <div class="field">
-                    <label>First Name</label>
+                    <label>{{ $t("First Name") }}</label>
                     
                     <div class="control">
                         <input type="text" name="first_name" class="input" v-model="customer.first_name">
@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Last Name</label>
+                    <label>{{ $t("Last Name") }}</label>
                     
                     <div class="control">
                         <input type="text" name="last_name" class="input" v-model="customer.last_name">
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Address</label>
+                    <label>{{ $t("Address") }}</label>
                     
                     <div class="control">
                         <input type="text" name="address" class="input" v-model="customer.address">
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="field">
-                    <label>City</label>
+                    <label>{{ $t("City") }}</label>
                     
                     <div class="control">
                         <input type="text" name="city" class="input" v-model="customer.city">
@@ -58,7 +58,7 @@
 
             <div class="column is-6">
                 <div class="field">
-                    <label>Postcode</label>
+                    <label>{{ $t("Postcode") }}</label>
                     
                     <div class="control">
                         <input type="text" name="postcode" class="input" v-model="customer.postcode">

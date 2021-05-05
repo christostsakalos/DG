@@ -1,22 +1,23 @@
 <template>
     <div class="page-edit-part">
+        <Languages />
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-                <li><router-link to="/dashboard">Dashboard</router-link></li>
-                <li><router-link to="/parts">Parts</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Dashboard") }}</router-link></li>
+                <li><router-link to="/parts">{{ $t("Parts") }}</router-link></li>
                 <li><router-link :to="{ name: 'Part', params: { id: part.id }}">{{ part.name }} {{  part.description}}</router-link></li>
-                <li class="is-active"><router-link :to="{ name: 'PartEdit', params: { id: part.id }}" aria-current="true">Edit</router-link></li>
+                <li class="is-active"><router-link :to="{ name: 'PartEdit', params: { id: part.id }}" aria-current="true">{{ $t("Edit") }}</router-link></li>
             </ul>
         </nav>
 
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Edit - {{part.name}}</h1>
+                <h1 class="title">{{ $t("Edit") }} - {{part.name}}</h1>
             </div>
 
             <div class="column is-6">
                 <div class="field">
-                    <label>Name</label>
+                    <label>{{ $t("Name") }}</label>
                     
                     <div class="control">
                         <input type="text" name="name" class="input" v-model="part.name">
@@ -24,7 +25,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Description</label>
+                    <label>{{ $t("Description") }}</label>
                     
                     <div class="control">
                         <input type="text" name="description" class="input" v-model="part.description">
@@ -32,7 +33,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Quantity</label>
+                    <label>{{ $t("Quantity") }}</label>
                     
                     <div class="control">
                         <input type="number" name="quantity" class="input" v-model="part.quantity">
@@ -41,7 +42,7 @@
             </div>
 
             <div class="column is-6">
-                Select Category<br>
+                {{ $t("Select Category") }}<br>
 <div class="select is-link" >
   <select v-model="category" @click="getCategory">
         
@@ -68,9 +69,11 @@ import axios from 'axios';
 import {ref, onMounted} from 'vue';
 import {useRoute, useRouter} from "vue-router";
 import { toast } from 'bulma-toast';
+import Languages from '@/components/Languages.vue';
 
 export default {
     name: 'EditPart',
+    components: {Languages},
 
     setup(){
         const name = ref('');

@@ -7,8 +7,7 @@
 </template>
 
 <script>
-  import Logout from '@/components/buttons/Logout'
-
+  import Logout from '@/components/buttons/Logout';
 export default {
     name: 'MyAccount',
     components: {

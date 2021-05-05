@@ -20,7 +20,8 @@
 </template>
 
 <script>
+import Languages from '@/components/Languages.vue';
 export default {
-    name: 'Dashboard'
+    name: 'Dashboard',
 }
 </script>

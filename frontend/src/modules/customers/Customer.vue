@@ -2,8 +2,8 @@
     <div class="page-customer">
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-                <li><router-link to="/dashboard">Dashboard</router-link></li>
-                <li><router-link to="/customers">Customers</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Dashboard") }}</router-link></li>
+                <li><router-link to="/customers">{{ $t("Customers") }}</router-link></li>
                 <li><router-link :to="{ name: 'Customer', params: { id: customer.id }}">{{ customer.first_name }} {{  customer.last_name}}</router-link></li>
             </ul>
         </nav>
@@ -11,13 +11,13 @@
             <div class="column is-4">
                 <h1 class="title">{{ customer.first_name }} {{ customer.last_name }}</h1>
 
-                 <router-link :to="{ name: 'CustomerEdit', params: { id: customer.id }}" class="button is-light mt-4">Edit Customer</router-link>
+                 <router-link :to="{ name: 'CustomerEdit', params: { id: customer.id }}" class="button is-light mt-4">{{ $t("Edit Customer") }}</router-link>
                  <br>
-                 <router-link :to="{ name: 'CustomerDelete', params: { id: customer.id }}" class="button is-danger mt-4">Delete Customer</router-link>
+                 <router-link :to="{ name: 'CustomerDelete', params: { id: customer.id }}" class="button is-danger mt-4">{{ $t("Delete Customer") }}</router-link>
             </div>
 
             <div class="column is-4">
-                <h2 class="subtitle">Customer details</h2>
+                <h2 class="subtitle">{{ $t("Customer details") }}</h2>
 
                 <p><strong>{{ customer.email }}</strong></p>
                 
@@ -32,15 +32,15 @@
         <div class="column is-6">
    
            
-                            <div class="table-container"> <h2 class="subtitle">Owned vehicles: </h2>
+                            <div class="table-container"> <h2 class="subtitle">{{ $t("Owned vehicles") }}: </h2>
                 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
                     <thead>
                     <tr class="th">
-                        <th>Make</th>
-                        <th>Model</th>
-                        <th>Vehicle Registration number</th>
-                        <th>Fuel Type</th>
-                        <th>Colour</th>
+                        <th>{{ $t("Make") }}</th>
+                        <th>{{ $t("Model") }}</th>
+                        <th>{{ $t("Vehicleregistrationnumber") }}</th>
+                        <th>{{ $t("Fuel Type") }}</th>
+                        <th>{{ $t("Colour") }}</th>
                     </tr></thead>
 
                     <tbody>
@@ -61,15 +61,15 @@
             </div>
             </div>
 <div class="column is-6">
-                            <div class="table-container"> <h2 class="subtitle">Invoices: </h2>
+                            <div class="table-container"> <h2 class="subtitle">{{ $t("Invoices") }}: </h2>
                 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
                     <thead>
                     <tr class="th">
-                        <th>Invoice Number</th>
-                        <th>Amount</th>
-                        <th>Due days</th>
-                        <th>Is paid</th>
-                        <th>Action</th>
+                            <th><p>{{ $t("Invoice Number") }}</p></th>
+                            <th>{{ $t("Amount") }}</th>
+                            <th>{{$t("Due date")}}</th>
+                            <th>{{ $t("Is paid") }}</th>
+                            <th>{{ $t("Action") }}</th>
                     </tr></thead>
 
                     <tbody>

@@ -2,11 +2,11 @@
     <div class="page-add-vehicle">
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Add vehicle</h1>
+                <h1 class="title">{{ $t("Add vehicle") }}</h1>
             </div>
             <div class="column is-6">
                 <div class="field">
-                    <label>Make</label>
+                    <label>{{ $t("Make") }}</label>
                     
                     <div class="control">
                         <input type="text" name="make" class="input" v-model="make">
@@ -15,7 +15,7 @@
 
 
                 <div class="field">
-                    <label>Model</label>
+                    <label>{{ $t("Model") }}</label>
                     
                     <div class="control">
                         <input type="text" name="model" class="input" v-model="model">
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Vehicle Registration Number</label>
+                    <label>{{ $t("Vehicleregistrationnumber") }}</label>
                     
                     <div class="control">
                         <input type="text" name="vehicleregistrationnumber" class="input" v-model="vehicleregistrationnumber">
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Fuel Type</label>
+                    <label>{{ $t("Fuel Type") }}</label>
                     
                     <div class="control">
                         <input type="text" name="fueltype" class="input" v-model="fueltype">
@@ -39,18 +39,18 @@
                 </div>
 
                 <div class="field">
-                    <label>Colour</label>
+                    <label>{{ $t("Colour") }}</label>
                     
                     <div class="control">
                         <input type="text" name="colour" class="input" v-model="colour">
                     </div>
                 </div>
-Select Owner<br>
+{{ $t("Select Owner") }}<br>
 
 <div class="select is-link">
     
   <select v-model="owner" @click="getOwner">
-
+     <option value="">{{ $t("Select Owner") }}</option>
     <option v-for="owner in ownerget"  v-bind:key="owner.id" :value="owner.id">{{owner.first_name}} {{ owner.last_name}}</option>
   </select>
 </div>
@@ -74,7 +74,8 @@ Select Owner<br>
 import axios from 'axios'
 import {ref, onMounted} from 'vue';
 import {useRouter} from 'vue-router';
-import { toast } from 'bulma-toast'
+import { toast } from 'bulma-toast';
+
 
 export default {
     name: 'AddVehicle',

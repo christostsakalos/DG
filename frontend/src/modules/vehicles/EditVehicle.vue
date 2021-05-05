@@ -2,21 +2,21 @@
     <div class="page-add-vehicle">
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-                <li><router-link to="/dashboard">Dashboard</router-link></li>
-                <li><router-link to="/vehicles">Vehicles</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Dashboard") }}</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Vehicles") }}</router-link></li>
                 <li><router-link :to="{ name: 'Vehicle', params: { id: vehicle.id }}">{{ vehicle.make }} {{  vehicle.model}}</router-link></li>
-                <li class="is-active"><router-link :to="{ name: 'VehicleEdit', params: { id: vehicle.id }}" aria-current="true">Edit</router-link></li>
+                <li class="is-active"><router-link :to="{ name: 'VehicleEdit', params: { id: vehicle.id }}" aria-current="true">{{ $t("Edit") }}</router-link></li>
             </ul>
         </nav>
 
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Edit - {{ vehicle.make }} {{  vehicle.model}}</h1>
+                <h1 class="title">{{ $t("Edit") }} - {{ vehicle.make }} {{  vehicle.model}}</h1>
             </div>
 
             <div class="column is-6">
                 <div class="field">
-                    <label>Make</label>
+                    <label>{{ $t("Make") }}</label>
                     
                     <div class="control">
                         <input type="text" name="make" class="input" v-model="vehicle.make">
@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Model</label>
+                    <label>{{ $t("Model") }}</label>
                     
                     <div class="control">
                         <input type="text" name="model" class="input" v-model="vehicle.model">
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Vehicle Registration Number</label>
+                    <label>{{ $t("Vehicleregistrationnumber") }}</label>
                     
                     <div class="control">
                         <input type="email" name="vehicleregistrationnumber" class="input" v-model="vehicle.vehicleregistrationnumber">
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Fuel Type </label>
+                    <label>{{ $t("Fuel Type") }}</label>
                     
                     <div class="control">
                         <input type="text" name="fueltype" class="input" v-model="vehicle.fueltype">
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Colour</label>
+                    <label>{{ $t("Colour") }}</label>
                     
                     <div class="control">
                         <input type="text" name="colour" class="input" v-model="vehicle.colour">
@@ -57,7 +57,7 @@
             </div>
 
             <div class="column is-6">
-                Select Owner<br>
+                {{ $t("Select Owner") }}<br>
 <div class="select is-link" >
   <select v-model="owner" @click="getOwner">
         

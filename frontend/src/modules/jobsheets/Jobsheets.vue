@@ -3,14 +3,14 @@
         <div class="columns is-multiline">
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-                <li><router-link to="/dashboard">Dashboard</router-link></li>
-                <li><router-link to="/jobsheets">Jobsheets</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Dashboard") }}</router-link></li>
+                <li><router-link to="/jobsheets">{{ $t("Jobsheets") }}</router-link></li>
             </ul>
         </nav>
             <div class="column is-12">
-                <h1 class="title">Jobs Manager</h1>
+                <h1 class="title">{{ $t("Jobs Manager") }}</h1>
 
-                <router-link :to="{ name: 'AddJobsheet' }" class="button is-success mt-4">Add jobsheet</router-link>
+                <router-link :to="{ name: 'AddJobsheet' }" class="button is-success mt-4">{{ $t("Add jobsheet") }}</router-link>
                 <div class="field has-addons">
   <div class="control">
     <br>
@@ -28,14 +28,14 @@
                 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
                     <thead>
                     <tr class="th">
-                        <th >Reference Number</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Vehicleregistrationnumber</th>
-                        <th>Date Due</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th >{{ $t("Reference Number") }}</th>
+                        <th>{{ $t("First Name") }}</th>
+                        <th>{{ $t("Last Name") }}</th>
+                        <th>{{ $t("Email") }}</th>
+                        <th>{{ $t("Vehicleregistrationnumber") }}</th>
+                        <th>{{ $t("Date Due") }}</th>
+                        <th>{{ $t("Status") }}</th>
+                        <th>{{ $t("Action") }}</th>
                     </tr></thead>
                     
                     <tbody v-if="search_term.length <= 3" @keyup="load">
@@ -48,9 +48,9 @@
                         <td class="table is-narrow">{{ jobsheet.vehicleregistrationnumber}}</td>
                         <td class="table is-narrow">{{ jobsheet.datedue }}</td>
                         <td class="table is-narrow">{{ jobsheet.status }}</td>
-                        <td class="table is-narrow"><router-link :to="{ name: 'Jobsheet', params: { id: jobsheet.id }}" class="button is-info">View</router-link>
-                        <router-link :to="{ name: 'JobsheetEdit', params: { id: jobsheet.id }}" class="button is-link">Edit</router-link>
-                        <button class="button is-danger" @click="Deletejobsheet(jobsheet.id)">Delete</button></td>
+                        <td class="table is-narrow"><router-link :to="{ name: 'Jobsheet', params: { id: jobsheet.id }}" class="button is-info">{{ $t("View") }}</router-link>
+                        <router-link :to="{ name: 'JobsheetEdit', params: { id: jobsheet.id }}" class="button is-link">{{ $t("Edit") }}</router-link>
+                        <button class="button is-danger" @click="Deletejobsheet(jobsheet.id)">{{ $t("Delete") }}</button></td>
                     </tr>
                  <Paginator :last-page="lastPage"  @page-changed="load($event)"/>   </tbody>
                     <tbody v-else-if="search_term.length >= 3" >
@@ -63,9 +63,9 @@
                         <td class="table is-narrow">{{ jobsheet.datedue }}</td>
                         <td class="table is-narrow">{{ jobsheet.status }}</td>
 
-                        <td class="table is-narrow"><router-link :to="{ name: 'Jobsheet', params: { id: jobsheet.id }}" class="button is-info">View</router-link>
-                        <router-link :to="{ name: 'JobsheetEdit', params: { id: jobsheet.id }}" class="button is-link">Edit</router-link>
-                        <button class="button is-danger" @click="Deletejobsheet(jobsheet.id)">Delete</button></td>
+                        <td class="table is-narrow"><router-link :to="{ name: 'Jobsheet', params: { id: jobsheet.id }}" class="button is-info">{{ $t("View") }}</router-link>
+                        <router-link :to="{ name: 'JobsheetEdit', params: { id: jobsheet.id }}" class="button is-link">{{ $t("Edit") }}</router-link>
+                        <button class="button is-danger" @click="Deletejobsheet(jobsheet.id)">{{ $t("Delete") }}</button></td>
                     </tr>
                <PaginatorSearch :last-page="lastPagesearch" @page-changedsearch="getjobsheet($event)" />
                </tbody>

@@ -2,23 +2,23 @@
     <div class="page-add-invoice">
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-                <li><router-link to="/dashboard">Dashboard</router-link></li>
-                <li><router-link to="/invoices">Invoices</router-link></li>
-                <li class="is-active"><router-link to="/invoices/add" aria-current="true">Add</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Dashboard") }}</router-link></li>
+                <li><router-link to="/invoices">{{ $t("Invoices") }}</router-link></li>
+                <li class="is-active"><router-link to="/invoices/add" aria-current="true">{{ $t("Add") }}</router-link></li>
             </ul>
         </nav>
 
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Add invoice</h1>
+                <h1 class="title">{{$t("Add Invoice")}}</h1>
             </div>
 
             <div class="column is-12">
-                <h2 class="is-size-5 mb-4">Customer</h2>
+                <h2 class="is-size-5 mb-4">{{$t("Customer")}}</h2>
 
                 <div class="select">
                     <select name="customer" v-model="invoice.customer">
-                        <option value="">- Select customer -</option>
+                        <option value="">- {{$t("Select customer")}} -</option>
                         <option 
                             v-for="customer in customers"
                             v-bind:key="customer.id"
@@ -32,7 +32,7 @@
                 <div class="box mt-4" v-if="invoice.customer">
                     <p><strong>{{ invoice.customer.first_name}} {{invoice.customer.last_name}}</strong></p>
                     
-                    <p><strong>Email:</strong> {{ invoice.customer.email }}</p>
+                    <p><strong>{{ $t("Email") }}:</strong> {{ invoice.customer.email }}</p>
                     <p v-if="invoice.customer.address">{{ invoice.customer.address }}</p>
                     <p v-if="invoice.customer.postcode">{{ invoice.customer.postcode }}</p>
                     <p v-if="invoice.customer.country">{{ invoice.customer.country }}</p>
@@ -40,7 +40,7 @@
             </div>
 
             <div class="column is-12">
-                <h2 class="is-size-5 mb-4">Items</h2>
+                <h2 class="is-size-5 mb-4">{{ $t("Items") }}</h2>
 
                 <ItemForm
                     v-for="item in invoice.items"
@@ -54,10 +54,10 @@
             </div>
 
             <div class="column is-12">
-                <h2 class="is-size-5 mb-4">Misc</h2>
+                <h2 class="is-size-5 mb-4">{{ $t("Misc") }}</h2>
 
                 <div class="field">
-                    <label>Due days</label>
+                    <label>{{ $t("Due days") }}</label>
 
                     <div class="control">
                         <input type="number" class="input" v-model="invoice.due_days">
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Bank Account</label>
+                    <label>{{ $t("Bank account") }}</label>
 
                     <div class="control">
                         <input type="text" class="input" v-model="invoice.bankaccount">
@@ -75,11 +75,11 @@
         </div>
 
         <div class="column is-12">
-            <h2 class="is-size-5 mb-4">Total</h2>
+            <h2 class="is-size-5 mb-4">{{ $t("Total") }}</h2>
 
-            <p><strong>Net amount</strong>: £{{ invoice.net_amount }}</p>
-            <p><strong>Vat amount</strong>: £{{ invoice.vat_amount }}</p>
-            <p><strong>Gross amount</strong>: £{{ invoice.gross_amount }}</p>
+                    <p><strong>{{ $t("Net amount") }}</strong>: £{{ invoice.net_amount }}</p>
+                    <p><strong>{{ $t("Vat amount") }}</strong>: £{{ invoice.vat_amount }}</p>
+                    <p><strong>{{ $t("Gross amount") }}</strong>: £{{ invoice.gross_amount }}</p>
         </div>
 
         <div class="column is-12">

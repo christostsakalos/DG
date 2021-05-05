@@ -1,12 +1,13 @@
 <template>
     <div class="page-add-part">
+         <Languages /><br>
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Add part</h1>
+                <h1 class="title">{{ $t("Add Part") }}</h1>
             </div>
             <div class="column is-6">
                 <div class="field">
-                    <label>Make</label>
+                    <label>{{ $t("Name") }}</label>
                     
                     <div class="control">
                         <input type="text" name="name" class="input" v-model="name">
@@ -15,7 +16,7 @@
 
 
                 <div class="field">
-                    <label>Description</label>
+                    <label>{{ $t("Description") }}</label>
                     
                     <div class="control">
                         <input type="text" name="description" class="input" v-model="description">
@@ -23,7 +24,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Quantity</label>
+                    <label>{{ $t("Quantity") }}</label>
                     
                     <div class="control">
                         <input type="number" step="0.01" class="input" v-model="quantity">
@@ -31,7 +32,7 @@
                 </div>
 
                 </div>
-Select Category<br>
+{{ $t("Select Category") }}<br>
 
 <div class="select is-link">
     
@@ -59,10 +60,12 @@ Select Category<br>
 import axios from 'axios'
 import {ref, onMounted} from 'vue';
 import {useRouter} from 'vue-router';
-import { toast } from 'bulma-toast'
+import { toast } from 'bulma-toast';
+import Languages from '@/components/Languages.vue';
 
 export default {
     name: 'AddPart',
+    components: {Languages},
     
     setup(){
         const router = useRouter();
@@ -76,8 +79,7 @@ export default {
 
     const getCategory = async () => {
       const response = await axios.get(`api/v1/getcategories`);
-      categoryget.value = response.data;
-      console.log(categoryget.value)   }
+      categoryget.value = response.data;}
        
 
 

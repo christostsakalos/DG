@@ -2,26 +2,26 @@
     <div class="page-invoices">
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-                <li><router-link to="/dashboard">Dashboard</router-link></li>
-                <li class="is-active"><router-link to="/invoices" aria-current="true" >Invoices</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Dashboard") }}</router-link></li>
+                <li class="is-active"><router-link to="/invoices" aria-current="true" >{{ $t("Invoices") }}</router-link></li>
             </ul>
         </nav>
 
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Invoices</h1>
+                <h1 class="title">{{ $t("Invoices") }}</h1>
             </div>
 
             <div class="column is-12">
                 <table class="table is-fullwidth">
                     <thead>
                         <tr>
-                            <th>Invoice Number</th>
-                            <th>Customer</th>
-                            <th>Amount</th>
-                            <th>Due date</th>
-                            <th>Is paid</th>
-                            <th>Action</th>
+                            <th><p>{{ $t("Invoice Number") }}</p></th>
+                            <th>{{ $t("Customer") }}</th>
+                            <th>{{ $t("Amount") }}</th>
+                            <th>{{$t("Due date")}}</th>
+                            <th>{{ $t("Is paid") }}</th>
+                            <th>{{ $t("Action") }}</th>
                         </tr>
                     </thead>
 
@@ -36,7 +36,7 @@
                             <td>{{ invoice.get_due_date_formatted }}</td>
                             <td>{{ getStatusLabel(invoice) }}</td>
                             <td>
-                                <router-link class="button is-link" :to="{ name: 'Invoice', params: { id: invoice.id }}">Details</router-link>
+                                <router-link class="button is-link" :to="{ name: 'Invoice', params: { id: invoice.id }}">{{ $t("Details") }}</router-link>
                             </td>
                         </tr>
                        <div v-if="invoices.length > 15"> <Paginator :last-page="lastPage"  @page-changed="load($event)"/> </div>

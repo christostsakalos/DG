@@ -2,8 +2,8 @@
     <div class="page-vehicle">
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-                <li><router-link to="/dashboard">Dashboard</router-link></li>
-                <li><router-link to="/vehicles">Vehicles</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Dashboard") }}</router-link></li>
+                <li><router-link to="/vehicles">{{ $t("Vehicles") }}</router-link></li>
                 <li><router-link :to="{ name: 'Vehicle', params: { id: vehicle.id }}">{{ vehicle.make }} {{  vehicle.model}}</router-link></li>
             </ul>
         </nav>
@@ -11,20 +11,20 @@
             <div class="column is-4">
                 <h1 class="title">{{ vehicle.make }} {{  vehicle.model}}</h1>
 
-                 <router-link :to="{ name: 'VehicleEdit', params: { id: vehicle.id }}" class="button is-light mt-4">Edit Vehicle</router-link>
+                 <router-link :to="{ name: 'VehicleEdit', params: { id: vehicle.id }}" class="button is-light mt-4">{{ $t("Edit") }}</router-link>
                  <br>
-                 <router-link :to="{ name: 'VehicleDelete', params: { id: vehicle.id }}" class="button is-danger mt-4">Delete Vehicle</router-link>
+                 <router-link :to="{ name: 'VehicleDelete', params: { id: vehicle.id }}" class="button is-danger mt-4">{{ $t("Delete") }}</router-link>
             </div>
 
             <div class="column is-4">
-                <h2 class="subtitle">Vehicle details</h2>
+                <h2 class="subtitle">{{ $t("Vehicle details") }}</h2>
 
                 <p><strong>{{ vehicle.vehicleregistrationnumber }}</strong></p><br>
                 <p><strong>{{ vehicle.fueltype }}</strong></p><br>
                 <p><strong>{{ vehicle.colour }}</strong></p>
             </div>
                         <div class="column is-4">
-                <h2 class="subtitle">Vehicle owner:</h2>
+                <h2 class="subtitle">{{ $t("Vehicle owner") }}:</h2>
 
                 <p><strong>{{ vehicle.first_name }}</strong></p><br>
                 <p><strong>{{ vehicle.last_name }}</strong></p>

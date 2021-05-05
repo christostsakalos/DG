@@ -1,16 +1,17 @@
 <template>
     <div class="page-parts">
+      <Languages /><br>
         <div class="columns is-multiline">
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-                <li><router-link to="/dashboard">Dashboard</router-link></li>
-                <li><router-link to="/parts">Parts</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Dashboard") }}</router-link></li>
+                <li><router-link to="/parts">{{ $t("Parts") }}</router-link></li>
             </ul>
         </nav>
             <div class="column is-12">
-                <h1 class="title">Parts Manager</h1>
+                <h1 class="title">{{ $t("Parts Manager") }}</h1>
 
-                <router-link :to="{ name: 'AddPart' }" class="button is-success mt-4">Add Part</router-link>
+                <router-link :to="{ name: 'AddPart' }" class="button is-success mt-4">{{ $t("Add Part") }}</router-link>
                 <div class="field has-addons">
   <div class="control">
     <br>
@@ -23,16 +24,16 @@
             </div>
 
             <div
-                class="column is-8">
+                class="column is-12">
               <div class="table-container">
                 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
                     <thead>
                     <tr class="th">
-                        <th >Name</th>
-                        <th>Description</th>
-                        <th>Quantity</th>
-                        <th>Category</th>
-                        <th>Action</th>
+                        <th >{{ $t("Name") }}</th>
+                        <th>{{ $t("Description") }}</th>
+                        <th>{{ $t("Quantity") }}</th>
+                        <th>{{ $t("Category") }}</th>
+                        <th>{{ $t("Action") }}</th>
                     </tr></thead>
                     
                     <tbody v-if="search_term.length <= 3" @keyup="load">
@@ -42,9 +43,9 @@
                         <td class="table is-narrow">{{ part.description }}</td>
                         <td class="table is-narrow">{{ part.quantity}}</td>
                         <td class="table is-narrow">{{ part.category_name }}</td>
-                        <td class="table is-narrow"><router-link :to="{ name: 'Part', params: { id: part.id }}" class="button is-info">View</router-link>
-                        <router-link :to="{ name: 'PartEdit', params: { id: part.id }}" class="button is-link">Edit</router-link>
-                        <button class="button is-danger" @click="Deletepart(part.id)">Delete</button></td>
+                        <td class="table is-narrow"><router-link :to="{ name: 'Part', params: { id: part.id }}" class="button is-info">{{ $t("View") }}</router-link>
+                        <router-link :to="{ name: 'PartEdit', params: { id: part.id }}" class="button is-link">{{ $t("Edit") }}</router-link>
+                        <button class="button is-danger" @click="Deletepart(part.id)">{{ $t("Delete") }}</button></td>
                     </tr>
                  <Paginator :last-page="lastPage" @page-changed="load($event)"/>   </tbody>
                     <tbody v-else-if="search_term.length >= 3">
@@ -53,9 +54,9 @@
                         <td class="table is-narrow">{{ part.description }}</td>
                         <td class="table is-narrow">{{ part.quantity}}</td>
                         <td class="table is-narrow">{{ part.category_name }}</td>
-                        <td class="table is-narrow"><router-link :to="{ name: 'Part', params: { id: part.id }}" class="button is-info">View</router-link>
-                        <router-link :to="{ name: 'PartEdit', params: { id: part.id }}" class="button is-link">Edit</router-link>
-                        <button class="button is-danger" @click="Deletepart(part.id)">Delete</button></td>
+                        <td class="table is-narrow"><router-link :to="{ name: 'Part', params: { id: part.id }}" class="button is-info">{{ $t("View") }}</router-link>
+                        <router-link :to="{ name: 'PartEdit', params: { id: part.id }}" class="button is-link">{{ $t("Edit") }}</router-link>
+                        <button class="button is-danger" @click="Deletepart(part.id)">{{ $t("Delete") }}</button></td>
                     </tr>
                <PaginatorSearch :last-page="lastPagesearch" @page-changedsearch="getPart($event)" />
                </tbody>
@@ -71,12 +72,13 @@
 <script>
 import {ref, onMounted, useRouter} from 'vue';
 import { toast } from 'bulma-toast';
-import axios from 'axios'
-import Paginator from '@/components/paginators/Paginator'
-import PaginatorSearch from '@/components/paginators/PaginatorSearch'
+import axios from 'axios';
+import Paginator from '@/components/paginators/Paginator';
+import PaginatorSearch from '@/components/paginators/PaginatorSearch';
+import Languages from '@/components/Languages.vue';
 export default {
     name: 'Parts',
-    components: {Paginator, PaginatorSearch},
+    components: {Paginator, PaginatorSearch, Languages},
   setup() {
 
 

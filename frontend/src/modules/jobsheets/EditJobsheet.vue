@@ -2,49 +2,49 @@
     <div class="page-edit-jobsheet">
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-                <li><router-link to="/dashboard">Dashboard</router-link></li>
-                <li><router-link to="/jobsheets">Jobsheets</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Dashboard") }}</router-link></li>
+                <li><router-link to="/jobsheets">{{ $t("Jobsheets") }}</router-link></li>
                 <li><router-link :to="{ name: 'Jobsheet', params: { id: jobsheet.id }}">Job {{ jobsheet.reference_number }}</router-link></li>
-                <li class="is-active"><router-link :to="{ name: 'JobsheetEdit', params: { id: jobsheet.id }}" aria-current="true">Edit</router-link></li>
+                <li class="is-active"><router-link :to="{ name: 'JobsheetEdit', params: { id: jobsheet.id }}" aria-current="true">{{ $t("Edit") }}</router-link></li>
             </ul>
         </nav>
     
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Edit - Job {{ jobsheet.reference_number }}</h1>
+                <h1 class="title">{{ $t("Edit") }} {{ jobsheet.reference_number }}</h1>
             </div>
 
             <div class="column is-6">
                 <div class="field">
                 <div class="field">
-                    <label>Ref Number</label>
+                    <label>{{ $t('Reference Number') }}</label>
                     
                     <div class="control">
                         <input type="number" name="reference_number" class="input" v-model="reference_number">
                     </div>
                 </div>
-Select Customer<br>
+{{ $t('Select customer') }}<br>
 
 <div class="select is-link">
     
   <select v-model="customer" @click="getCustomer">
-
+<option value="">{{ $t('Select customer') }}</option>
     <option v-for="customer in customerget"  v-bind:key="customer.id" :value="customer.id">{{customer.first_name}} {{ customer.last_name}}</option>
   </select>
 </div><br>
-Select Vehicle<br>
+{{ $t('Select vehicle') }}<br>
 
 <div class="select is-link">
     
   <select v-model="vehicle" @click="getVehicle">
-
+    <option value="">{{ $t('Select vehicle') }}</option>
     <option v-for="vehicle in vehicleget"  v-bind:key="vehicle.id" :value="vehicle.id">{{vehicle.vehicleregistrationnumber}}</option>
   </select>
 </div>
 
 
                 <div class="field">
-                    <label>Note</label>
+                    <label>{{ $t('Note') }}</label>
                     
                     <div class="control">
                         <input type="text" name="notes" class="input" v-model="notes">
@@ -52,7 +52,7 @@ Select Vehicle<br>
                 </div>
 
                 <div class="field">
-                    <label>Date Due</label>
+                    <label>{{ $t('Date Due') }}</label>
                     
                     <div class="control">
                         <input type="date" name="datedue" v-model="datedue">
@@ -61,14 +61,14 @@ Select Vehicle<br>
 
                 <div class="select">
                 <select v-model="status">
-                    <option>Status</option>
+                    <option value="">{{ $t('Status') }}</option>
                     <option>Pending</option>
                     <option>Complete</option>
                 </select>
                 </div>
 
                 <div class="field">
-                    <label>Remaining</label>
+                    <label>{{ $t('Remaining') }}</label>
                     
                     <div class="control">
                         <input type="number" name="remaining" class="input" v-model="remaining">

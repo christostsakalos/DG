@@ -3,12 +3,12 @@
         <div class="columns is-multiline">
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-                <li><router-link to="/dashboard">Dashboard</router-link></li>
-                <li><router-link to="/vehicles">Vehicles</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Dashboard") }}</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Vehicles") }}</router-link></li>
             </ul>
         </nav>
             <div class="column is-12">
-                <h1 class="title">Vehicle Manager</h1>
+                <h1 class="title">{{ $t("Vehicle Manager") }}</h1>
 
                 <router-link :to="{ name: 'AddVehicle' }" class="button is-success mt-4">Add vehicle</router-link>
                 <div class="field has-addons">
@@ -23,18 +23,18 @@
             </div>
 
             <div
-                class="column is-8">
+                class="column is-12">
               <div class="table-container">
                 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
                     <thead>
                     <tr class="th">
-                        <th >Make</th>
-                        <th>Model</th>
-                        <th>Vehicle Registration Number</th>
-                        <th>Fuel Type</th>
-                        <th>Colour</th>
-                        <th>Owner</th>
-                        <th>Action</th>
+                        <th>{{ $t("Make") }}</th>
+                        <th>{{ $t("Model") }}</th>
+                        <th>{{ $t("Vehicleregistrationnumber") }}</th>
+                        <th>{{ $t("Fuel Type") }}</th>
+                        <th>{{ $t("Colour") }}</th>
+                        <th>{{ $t("Owner") }}</th>
+                        <th>{{ $t("Action") }}</th>
                     </tr></thead>
                     
                     <tbody v-if="search_term.length <= 3" @keyup="load">
@@ -46,9 +46,9 @@
                         <td class="table is-narrow">{{ vehicle.fueltype }}</td>
                         <td class="table is-narrow">{{ vehicle.colour }}</td>
                         <td class="table is-narrow">{{ vehicle.first_name }} {{vehicle.last_name}}</td>
-                        <td class="table is-narrow"><router-link :to="{ name: 'Vehicle', params: { id: vehicle.id }}" class="button is-info">View</router-link>
-                        <router-link :to="{ name: 'VehicleEdit', params: { id: vehicle.id }}" class="button is-link">Edit</router-link>
-                        <button class="button is-danger" @click="Deletevehicle(vehicle.id)">Delete</button></td>
+                        <td class="table is-narrow"><router-link :to="{ name: 'Vehicle', params: { id: vehicle.id }}" class="button is-info">{{ $t("View") }}</router-link>
+                        <router-link :to="{ name: 'VehicleEdit', params: { id: vehicle.id }}" class="button is-link">{{ $t("Edit") }}</router-link>
+                        <button class="button is-danger" @click="Deletevehicle(vehicle.id)">{{ $t("Delete") }}</button></td>
                     </tr>
                  <Paginator :last-page="lastPage" @page-changed="load($event)"/>   </tbody>
                     <tbody v-else-if="search_term.length >= 3">
@@ -59,9 +59,9 @@
                         <td class="table is-narrow">{{ vehicle.fueltype }}</td>
                         <td class="table is-narrow">{{ vehicle.colour }}</td>
                         <td class="table is-narrow">{{ vehicle.first_name }} {{vehicle.last_name}}</td>
-                        <td class="table is-narrow"><router-link :to="{ name: 'Vehicle', params: { id: vehicle.id }}" class="button is-info">View</router-link>
-                        <router-link :to="{ name: 'VehicleEdit', params: { id: vehicle.id }}" class="button is-link">Edit</router-link>
-                        <button class="button is-danger" @click="Deletevehicle(vehicle.id)">Delete</button></td>
+                        <td class="table is-narrow"><router-link :to="{ name: 'Vehicle', params: { id: vehicle.id }}" class="button is-info">{{ $t("View") }}</router-link>
+                        <router-link :to="{ name: 'VehicleEdit', params: { id: vehicle.id }}" class="button is-link">{{ $t("Edit") }}</router-link>
+                        <button class="button is-danger" @click="Deletevehicle(vehicle.id)">{{ $t("Delete") }}</button></td>
                     </tr>
                <PaginatorSearch :last-page="lastPagesearch" @page-changedsearch="getVehicle($event)" />
                </tbody>

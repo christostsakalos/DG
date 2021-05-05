@@ -2,7 +2,7 @@
     <div class="columns">
         <div class="column is-3">
             <div class="field">
-                <label>Title</label>
+                <label>{{ $t("Title") }}</label>
                 <div class="control">
                     <input type="text" class="input" v-model="item.title">
                 </div>
@@ -11,7 +11,7 @@
 
         <div class="column is-3">
             <div class="field">
-                <label>Price</label>
+                <label>{{ $t("Price") }}</label>
                 <div class="control">
                     <input type="text" class="input" v-model="item.unit_price">
                 </div>
@@ -20,7 +20,7 @@
 
         <div class="column is-2">
             <div class="field">
-                <label>Quantity</label>
+                <label>{{ $t("Quantity") }}</label>
                 <div class="control">
                     <input type="number" class="input" v-model="item.quantity">
                 </div>
@@ -29,7 +29,7 @@
 
         <div class="column is-2">
             <div class="field">
-                <label>Vat rate</label>
+                <label>{{ $t("Vat rate") }}</label>
                 <div class="control">
                     <div class="select">
                         <select v-model="item.vat_rate">
@@ -44,7 +44,7 @@
 
         <div class="column is-2">
             <div class="field">
-                <label>Gross amount </label>
+                <label>{{ $t("Gross amount") }} </label>
                 <div class="control">
                     <input  type="text" class="input" v-bind:value="gross_amount" disabled>
                 </div>
@@ -54,8 +54,10 @@
 </template>
 
 <script>
+import Languages from './Languages.vue';
 export default {
     name: 'ItemForm',
+    components: {Languages},
     props: {
         initialItem: Object
     },

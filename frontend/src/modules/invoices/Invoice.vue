@@ -2,26 +2,26 @@
     <div class="page-invoice">
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-                <li><router-link to="/dashboard">Dashboard</router-link></li>
-                <li><router-link to="/invoices">Invoices</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Dashboard") }}</router-link></li>
+                <li><router-link to="/invoices">{{ $t("Invoices") }}</router-link></li>
                 <li class="is-active"><router-link :to="{ name: 'Invoice', params: { id: invoice.id }}" aria-current="true">{{ invoice.id }}</router-link></li>
             </ul>
         </nav>
 
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Invoice - {{ invoice.id }}</h1>
+                <h1 class="title">{{ $t("Invoice") }} - {{ invoice.id }}</h1>
 
                 <div class="buttons">
                     <button @click="getPdf()" class="button is-dark">Download PDF</button>
-                    <button @click="setAsPaid()" class="button is-success" v-if="!invoice.is_paid">Set as paid</button>
-                    <button @click="sendReminder()" class="button is-info" v-if="!invoice.is_paid">Send reminder</button>
+                    <button @click="setAsPaid()" class="button is-success" v-if="!invoice.is_paid">{{ $t("Set as paid") }}</button>
+                    <button @click="sendReminder()" class="button is-info" v-if="!invoice.is_paid">{{ $t("Send reminder") }}</button>
                 </div>
             </div>
 
             <div class="column is-12 mb-4">
                 <div class="box">
-                    <h3 class="is-size-4 mb-5">Client</h3>
+                    <h3 class="is-size-4 mb-5">{{ $t("Client") }}</h3>
 
                     <p><strong>{{ invoice.client_name }}</strong></p>
                     
@@ -33,15 +33,15 @@
 
             <div class="column is-12 mb-4">
                 <div class="box">
-                    <h3 class="is-size-4 mb-5">Items</h3>
+                    <h3 class="is-size-4 mb-5">{{ $t("Items") }}</h3>
 
                     <table class="table is-fullwidth">
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th>Quantity</th>
-                                <th>Vat rate</th>
-                                <th>Total</th>
+                                <th>{{ $t("Title") }}</th>
+                                <th>{{ $t("Quantity") }}</th>
+                                <th>{{ $t("Vate Rate") }}</th>
+                                <th>{{ $t("Total") }}</th>
                             </tr>
                         </thead>
 
@@ -62,19 +62,19 @@
 
             <div class="column is-12">
                 <div class="box">
-                    <h3 class="is-size-4 mb-5">Summary</h3>
+                    <h3 class="is-size-4 mb-5">{{ $t("Summary") }}</h3>
 
                     <div class="columns">
                         <div class="column is-6">
-                            <p><strong>Net amount</strong>: {{ invoice.net_amount }}</p>
-                            <p><strong>Vat amount</strong>: {{ invoice.vat_amount }}</p>
-                            <p><strong>Gross amount</strong>: {{ invoice.gross_amount }}</p>
-                            <p><strong>Bank account</strong>: {{ invoice.bankaccount }}</p>
+                            <p><strong>{{ $t("Net amount") }}</strong>: {{ invoice.net_amount }}</p>
+                            <p><strong>{{ $t("Vat amount") }}</strong>: {{ invoice.vat_amount }}</p>
+                            <p><strong>{{ $t("Gross amount") }}</strong>: {{ invoice.gross_amount }}</p>
+                            <p><strong>{{ $t("Bank account") }}</strong>: {{ invoice.bankaccount }}</p>
                         </div>
                     
                         <div class="column is-6">
-                            <p><strong>Due date</strong>: {{ invoice.get_due_date_formatted }}</p>
-                            <p><strong>Status</strong>: {{ getStatusLabel() }}</p>
+                            <p><strong>{{ $t("Due date") }}</strong>: {{ invoice.get_due_date_formatted }}</p>
+                            <p><strong>{{ $t("Status") }}</strong>: {{ getStatusLabel() }}</p>
                         </div>
                     </div>
                 </div>

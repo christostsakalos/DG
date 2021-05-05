@@ -2,21 +2,21 @@
     <div class="page-edit-customer">
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-                <li><router-link to="/dashboard">Dashboard</router-link></li>
-                <li><router-link to="/customers">Customers</router-link></li>
+                <li><router-link to="/dashboard">{{ $t("Dashboard") }}</router-link></li>
+                <li><router-link to="/customers">{{ $t("Customers") }}</router-link></li>
                 <li><router-link :to="{ name: 'Customer', params: { id: customer.id }}">{{ customer.first_name }} {{  customer.last_name}}</router-link></li>
-                <li class="is-active"><router-link :to="{ name: 'CustomerEdit', params: { id: customer.id }}" aria-current="true">Edit</router-link></li>
+                <li class="is-active"><router-link :to="{ name: 'CustomerEdit', params: { id: customer.id }}" aria-current="true">{{ $t("Edit") }}</router-link></li>
             </ul>
         </nav>
 
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Edit - {{ customer.first_name }} {{  customer.last_name}}</h1>
+                <h1 class="title">{{ $t("Edit") }} - {{ customer.first_name }} {{  customer.last_name}}</h1>
             </div>
 
             <div class="column is-6">
                 <div class="field">
-                    <label>First Name</label>
+                    <label>{{ $t("First Name") }}</label>
                     
                     <div class="control">
                         <input type="text" name="first_name" class="input" v-model="customer.first_name">
@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Last Name</label>
+                    <label>{{ $t("Last Name") }}</label>
                     
                     <div class="control">
                         <input type="text" name="last_name" class="input" v-model="customer.last_name">
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Email</label>
+                    <label>{{ $t("Email") }}</label>
                     
                     <div class="control">
                         <input type="email" name="email" class="input" v-model="customer.email">
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Address </label>
+                    <label>{{ $t("Address") }} </label>
                     
                     <div class="control">
                         <input type="text" name="address" class="input" v-model="customer.address">
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="field">
-                    <label>City</label>
+                    <label>{{ $t("City") }}</label>
                     
                     <div class="control">
                         <input type="text" name="city" class="input" v-model="customer.city">
@@ -58,7 +58,7 @@
 
             <div class="column is-6">
                 <div class="field">
-                    <label>Postcode</label>
+                    <label>{{ $t("Postcode") }}</label>
                     
                     <div class="control">
                         <input type="text" name="postcode" class="input" v-model="customer.postcode">
@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="field">
-                    <label>Country</label>
+                    <label>{{ $t("Country") }}</label>
                     
                     <div class="control">
                         <input type="text" name="country" class="input" v-model="customer.country">
