@@ -48,6 +48,7 @@ class InvoiceSerializer(serializers.ModelSerializer):
             "city",
             "postcode",
             "due_days",
+            "get_due_date_formatted",
             "bankaccount",
             "is_sent",
             "is_paid",

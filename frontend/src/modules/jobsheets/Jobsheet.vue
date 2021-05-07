@@ -18,11 +18,12 @@
 
             <div class="column is-4">
                 <h2 class="subtitle">{{ $t("Jobsheet Details") }}</h2>
-
-                <p><strong>{{ jobsheet.make }}</strong></p><br>
+             {{ $t("Customer") }}:   <p><strong>{{ jobsheet.first_name }}</strong></p><br>
+                <p><strong>{{ jobsheet.last_name }}</strong></p><br>
+              {{ $t("Vehicle") }}:  <p><strong>{{ jobsheet.make }}</strong></p><br>
                 <p><strong>{{ jobsheet.model }}</strong></p><br>
                 <p><strong>{{ jobsheet.vehicleregistrationnumber }}</strong></p><br>
-                <p><strong>{{ jobsheet.notes }}</strong></p>
+            {{ $t("Note") }}:    <p><strong>{{ jobsheet.notes }}</strong></p>
             </div>
                         <div class="column is-4">
                 <h2 class="subtitle">{{ $t("Status") }}</h2>

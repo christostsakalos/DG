@@ -2,7 +2,6 @@ from rest_framework import serializers
 
 from .models import Jobsheet
 from addins.vehicles.serializers import VehicleSerializer, Vehicle
-from addins.customers.serializers import CustomerSerializer, Customer
 
 
 class JobsheetSerializer(serializers.ModelSerializer):
@@ -10,24 +9,23 @@ class JobsheetSerializer(serializers.ModelSerializer):
     make = serializers.ReadOnlyField(source='vehicle.make')
     model = serializers.ReadOnlyField(source='vehicle.model')
     vehicleregistrationnumber = serializers.ReadOnlyField(source='vehicle.vehicleregistrationnumber')
-    customer = serializers.PrimaryKeyRelatedField(queryset=Customer.objects.all(), read_only=False)
-    first_name = serializers.ReadOnlyField(source='customer.first_name')
-    last_name = serializers.ReadOnlyField(source='customer.last_name')
-    email = serializers.ReadOnlyField(source='customer.email')
+    first_name = serializers.ReadOnlyField(source='vehicle.owner.first_name')
+    last_name = serializers.ReadOnlyField(source='vehicle.owner.last_name')
+    email= serializers.ReadOnlyField(source='vehicle.owner.email')
 
     class Meta:
         model = Jobsheet
         fields = (
             "id",
             "reference_number",
-            "customer",
             "first_name",
             "last_name",
-            "email",
             "vehicle",
             "make",
+            "email",
             "model",
             "vehicleregistrationnumber",
+            "get_paid_format",
             "notes",
             "datein",
             "datedue",

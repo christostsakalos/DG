@@ -12,15 +12,7 @@
                         <input type="number" name="reference_number" class="input" v-model="reference_number">
                     </div>
                 </div>
-{{ $t("Select customer") }}<br>
 
-<div class="select is-link">
-    
-  <select v-model="customer" @click="getCustomer">
-
-    <option v-for="customer in customerget"  v-bind:key="customer.id" :value="customer.id">{{customer.first_name}} {{ customer.last_name}}</option>
-  </select>
-</div><br>
 {{ $t("Select vehicle") }}<br>
 
 <div class="select is-link">
@@ -52,7 +44,7 @@
                 <select v-model="status">
                     <option value="">{{ $t("Status") }}</option>
                     <option>Pending</option>
-                    <option>C</option>
+                    <option>Complete</option>
                 </select>
                 </div>
 
@@ -90,19 +82,13 @@ export default {
     setup(){
         const router = useRouter();
         const reference_number = ref(0);
-        const customer = ref(0);
         const vehicle = ref(0);
         const status = ref('');
         const remaining = ref('');
         const notes = ref('');
         const datedue = ref('')
 
-        // Ref to get customers
-        const customerget = ref([])
 
-    const getCustomer = async () => {
-      const response = await axios.get(`api/v1/getowners`);
-      customerget.value = response.data;}
 
 
 
@@ -116,7 +102,6 @@ export default {
             await axios.post('/api/v1/jobsheets/',
             {
                 reference_number: reference_number.value,
-                customer: customer.value,
                 vehicle: vehicle.value,
                 status: status.value,
                 remaining: remaining.value,
@@ -140,15 +125,12 @@ export default {
         return{
             SubmitForm,
             vehicleget,
-            customerget,
             reference_number,
-            customer,
             vehicle,
             status,
             remaining,
             notes,
             datedue,
-            getCustomer,
             getVehicle,
         }
     },

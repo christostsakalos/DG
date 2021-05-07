@@ -33,7 +33,7 @@
                             <td>{{ invoice.id }}</td>
                             <td>{{ invoice.first_name }}{{ invoice.last_name}}</td>
                             <td>{{ invoice.gross_amount }}</td>
-                            <td>{{ invoice.get_due_date_formatted }}</td>
+                            <td v-if="invoice.is_paid === false">{{ invoice.get_due_date_formatted }}</td><td v-else></td>
                             <td>{{ getStatusLabel(invoice) }}</td>
                             <td>
                                 <router-link class="button is-link" :to="{ name: 'Invoice', params: { id: invoice.id }}">{{ $t("Details") }}</router-link>

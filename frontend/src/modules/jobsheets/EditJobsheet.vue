@@ -23,15 +23,7 @@
                         <input type="number" name="reference_number" class="input" v-model="reference_number">
                     </div>
                 </div>
-{{ $t('Select customer') }}<br>
 
-<div class="select is-link">
-    
-  <select v-model="customer" @click="getCustomer">
-<option value="">{{ $t('Select customer') }}</option>
-    <option v-for="customer in customerget"  v-bind:key="customer.id" :value="customer.id">{{customer.first_name}} {{ customer.last_name}}</option>
-  </select>
-</div><br>
 {{ $t('Select vehicle') }}<br>
 
 <div class="select is-link">
@@ -108,11 +100,7 @@ export default {
         const notes = ref('');
         const datedue = ref(new Date())
         const {params} = useRoute();
-        const customerget = ref([])
 
-    const getCustomer = async () => {
-      const response = await axios.get(`api/v1/getowners`);
-      customerget.value = response.data;}
 
     const vehicleget = ref([])
 
@@ -163,10 +151,8 @@ export default {
             remaining,
             notes,
             datedue,
-            getCustomer,
             getVehicle,
             jobsheet,
-            customerget
         }
       }
     

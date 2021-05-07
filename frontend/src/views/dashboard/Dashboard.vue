@@ -6,22 +6,23 @@
             </ul>
         </nav>
 
-<div style="display: flex;">
-        Test
-    <div style="flex: 0.1;height: 200px; background-color: #f4f5f8">
-
+<div class="columns is-multiline">
+    <div class="column">
+        <p class="subtitle">Incomplete Jobs</p> <Completechart />
+    </div>
+    <div class="column">
+     <p class="subtitle">Unpaid Jobs</p>   <Paidchart />
     </div>
 
-    <div class="divider is-vertical">And</div>
-    <div style="flex: 1;height: 200px; background-color: #f4f5f8"></div>
-    Test2
 </div>
     </div>
 </template>
 
 <script>
-import Languages from '@/components/Languages.vue';
+import Completechart from '@/components/charts/Completechart'
+import Paidchart from '@/components/charts/Paidchart';
 export default {
     name: 'Dashboard',
+    components: {Completechart, Paidchart},
 }
 </script>
