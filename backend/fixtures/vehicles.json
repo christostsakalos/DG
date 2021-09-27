@@ -1,0 +1,146 @@
+[{
+        "model": "vehicles.vehicle",
+        "pk": 1,
+        "fields": {
+            "make": "BMW",
+            "model": "M135i",
+            "vehicleregistrationnumber": "vrn",
+            "fueltype": "petrol",
+            "owner": 1
+        }
+    },
+    {
+        "model": "vehicles.vehicle",
+        "pk": 2,
+        "fields": {
+            "make": "BMW",
+            "model": "2 Series Coupe",
+            "vehicleregistrationnumber": "vrn",
+            "fueltype": "petrol",
+            "owner": 2
+        }
+    },
+    {
+        "model": "vehicles.vehicle",
+        "pk": 3,
+        "fields": {
+            "make": "BMW",
+            "model": "3 Series Coupe",
+            "vehicleregistrationnumber": "vrn",
+            "fueltype": "petrol",
+            "owner": 3
+        }
+    },
+    {
+        "model": "vehicles.vehicle",
+        "pk": 4,
+        "fields": {
+            "make": "Audi",
+            "model": "E-tron",
+            "vehicleregistrationnumber": "vrn",
+            "fueltype": "petrol",
+            "owner": 5
+        }
+    },
+    {
+        "model": "vehicles.vehicle",
+        "pk": 5,
+        "fields": {
+            "make": "Audi",
+            "model": "TT",
+            "vehicleregistrationnumber": "vrn",
+            "fueltype": "petrol",
+            "owner": 5
+        }
+    },
+    {
+        "model": "vehicles.vehicle",
+        "pk": 6,
+        "fields": {
+            "make": "Audi",
+            "model": "RS-GT",
+            "vehicleregistrationnumber": "vrn",
+            "fueltype": "petrol",
+            "owner": 192
+        }
+    },
+    {
+        "model": "vehicles.vehicle",
+        "pk": 7,
+        "fields": {
+            "make": "Audi",
+            "model": "A1 Stortback",
+            "vehicleregistrationnumber": "vrn",
+            "fueltype": "petrol",
+            "owner": 7
+        }
+    },
+    {
+        "model": "vehicles.vehicle",
+        "pk": 8,
+        "fields": {
+            "make": "Nissan",
+            "model": "Almera",
+            "vehicleregistrationnumber": "vrn",
+            "fueltype": "petrol",
+            "owner": 8
+        }
+    },
+    {
+        "model": "vehicles.vehicle",
+        "pk": 9,
+        "fields": {
+            "make": "Nissan",
+            "model": "Skyline",
+            "vehicleregistrationnumber": "vrn",
+            "fueltype": "petrol",
+            "owner": 9
+        }
+    },
+    {
+        "model": "vehicles.vehicle",
+        "pk": 10,
+        "fields": {
+            "make": "Nissan",
+            "model": "Tiida",
+            "vehicleregistrationnumber": "vrn",
+            "fueltype": "petrol",
+            "owner": 10
+        }
+    },
+    {
+        "model": "vehicles.vehicle",
+        "pk": 11,
+        "fields": {
+            "make": "Nissan",
+            "model": "Note",
+            "vehicleregistrationnumber": "vrn",
+            "fueltype": "petrol",
+            "owner": 1
+        }
+    },
+    {
+        "model": "vehicles.vehicle",
+        "pk": 12,
+        "fields": {
+            "make": "Nissan",
+            "model": "leaf",
+            "vehicleregistrationnumber": "vrn",
+            "fueltype": "petrol",
+            "owner": 1
+        }
+    },
+    {
+        "model": "vehicles.vehicle",
+        "pk": 13,
+        "fields": {
+            "make": "Nissan",
+            "model": "micra",
+            "vehicleregistrationnumber": "vrn",
+            "fueltype": "petrol",
+            "owner": 1
+        }
+    }
+
+
+]

@@ -13,7 +13,8 @@ class VehicleViewSet(viewsets.ModelViewSet):
     serializer_class = VehicleSerializer
     queryset = Vehicle.objects.all()
     pagination_class = CustomPagination
-    filter_backends = (filters.SearchFilter,)
+    filter_backends = (filters.SearchFilter,filters.OrderingFilter)
+    ordering_fields = ['id', 'vehicleregistrationnumber', 'make','model']
     search_fields = ('vehicleregistrationnumber', 'make','model', 'owner__first_name', 'owner__last_name')
 
 

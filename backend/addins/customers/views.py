@@ -13,7 +13,8 @@ class CustomerViewSet(viewsets.ModelViewSet):
     serializer_class = CustomerSerializer
     queryset = Customer.objects.all()
     pagination_class = CustomPagination
-    filter_backends = (filters.SearchFilter,)
+    filter_backends = (filters.SearchFilter, filters.OrderingFilter,)
+    ordering_fields = ['id', 'first_name', 'last_name','email']
     search_fields = ('first_name', 'last_name','email')
 
 
@@ -21,6 +22,7 @@ class CustomerViewSet(viewsets.ModelViewSet):
 @api_view(['GET'])
 def get_owners(request):
     owners = Customer.objects.all()
+    pagination_class = CustomPagination
     serializer_class = CustomerSerializer(owners, many = True)
     return Response(serializer_class.data)
 

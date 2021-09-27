@@ -13,11 +13,13 @@ class CustomPagination(PageNumberPagination):
     def get_paginated_response(self, data):
         return Response({
             'data': data,
-            'meta': {
+            'pagination': {
                 # Thanks to https://stackoverflow.com/questions/46626994/
                 'last_page': self.page.paginator.num_pages,
                 'page': int(self.request.GET.get('page', DEFAULT_PAGE)),
-                'page_size': int(self.request.GET.get('page_size', self.page_size))
+                'rowsNumber': self.page.paginator.count,
+                'rowsPerPage': int(self.request.GET.get('size', self.page_size)),
+                'sortBy': self.request.query_params.get('ordering', None)
             }
         })
 

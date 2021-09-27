@@ -1,0 +1,42 @@
+[{
+        "model": "inventory.part",
+        "pk": 1,
+        "fields": {
+            "name": "TirePart",
+            "category": 1,
+            "description": "Something",
+            "quantity": 5
+        }
+    },
+    {
+        "model": "inventory.part",
+        "pk": 2,
+        "fields": {
+            "name": "ExhaustPart",
+            "category": 2,
+            "description": "Something else",
+            "quantity": 4
+        }
+    },
+    {
+        "model": "inventory.part",
+        "pk": 3,
+        "fields": {
+            "name": "Turbopart",
+            "category": 3,
+            "description": "Something else",
+            "quantity": 3
+        }
+    },
+    {
+        "model": "inventory.part",
+        "pk": 4,
+        "fields": {
+            "name": "ScreenwiperPArt",
+            "category": 4,
+            "description": "Something else again",
+            "quantity": 3
+        }
+    }
+
+]

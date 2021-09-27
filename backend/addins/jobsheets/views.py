@@ -15,7 +15,9 @@ class JobsheetViewSet(viewsets.ModelViewSet):
     serializer_class = JobsheetSerializer
     queryset = Jobsheet.objects.all()
     pagination_class = CustomPagination
-    filter_backends = (filters.SearchFilter,)
+    filter_backends = (filters.SearchFilter, filters.OrderingFilter)
+    
+    ordering_fields = ['id', 'reference_number', 'last_name','vehicle__vehicleregistrationnumber']
     search_fields = ('reference_number', 'vehicle__make','vehicle__model', 'vehicle__vehicleregistrationnumber', 
     'vehicle__first_name', 'vehicle__last_name')
 

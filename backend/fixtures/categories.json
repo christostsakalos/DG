@@ -1,0 +1,30 @@
+[{
+        "model": "inventory.category",
+        "pk": 1,
+        "fields": {
+            "name": "Tires"
+        }
+    },
+    {
+        "model": "inventory.category",
+        "pk": 2,
+        "fields": {
+            "name": "Exhausts"
+        }
+    },
+    {
+        "model": "inventory.category",
+        "pk": 3,
+        "fields": {
+            "name": "Turbo"
+        }
+    },
+    {
+        "model": "inventory.category",
+        "pk": 4,
+        "fields": {
+            "name": "ScreenWiper"
+        }
+    }
+
+]

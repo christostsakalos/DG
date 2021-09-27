@@ -1,0 +1,34 @@
+[{
+        "model": "inventory.subcategory",
+        "pk": 1,
+        "fields": {
+            "name": "TireA",
+            "parent": 1
+        }
+    },
+    {
+        "model": "inventory.subcategory",
+        "pk": 2,
+        "fields": {
+            "name": "ExhaustA",
+            "parent": 2
+        }
+    },
+    {
+        "model": "inventory.subcategory",
+        "pk": 3,
+        "fields": {
+            "name": "TurboA",
+            "parent": 3
+        }
+    },
+    {
+        "model": "inventory.subcategory",
+        "pk": 4,
+        "fields": {
+            "name": "ScreenWiperA",
+            "parent": 4
+        }
+    }
+
+]
